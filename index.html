@@ -18,22 +18,14 @@
 
         <h1 class="text-center my-4">API MAIL </h1>
 
-
         <ul class="list-group">
-            <li class="list-group-item my-4 text-center">
-            {{ mails }}
+            <li v-for="mail in mails" class="list-group-item text-center">
+                {{ mail }}
             </li>
-
         </ul>
-
 
     </div>
 
-
-
-
-
-    
     <!-- link javascript -->
     <script src="js/script.js"></script>
     <!-- link bootstrap -->
