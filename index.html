@@ -24,6 +24,29 @@
             </li>
         </ul>
 
+        <br><hr><br>
+
+        <div class="container d-flex justify-content-center ">
+            <div class="row">
+                <div v-if="phone" class="card phone-info col px-0 mx-auto" style="width: 25rem;">
+                    <div class="card-header bg-danger">
+                        <h3 class="text-center">OTTIENI INFORMAZIONI CON UN CLICK!</h3>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Proprietario:</strong> {{ owner }}</li>
+                        <li class="list-group-item"><strong>Numero di telefono:</strong> {{ phone }}</li>
+                        <li class="list-group-item"><strong>STATO ATTIVAZIONE SIM:</strong> {{ expired }} </li>
+                    </ul>
+                </div>
+                <div class="col d-flex align-items-center ">
+                    <a class="btn btn-outline-light fw-bold" @click="getPhoneInfo">Ottieni informazioni sui telefoni intorno a te</a>
+
+                </div>
+            </div>
+
+        </div>
+        
+
     </div>
 
     <!-- link javascript -->

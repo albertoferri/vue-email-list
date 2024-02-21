@@ -1,11 +1,40 @@
 // ******** VUE ********
-const { createApp } = Vue;
+const { createApp, ref } = Vue;
 createApp({
     data() {
         return {
             mails: [],
+            phone: null,
+            brand: null
         }
     },
+    // ####### OPZIONALE TEST ##########
+    methods: {
+        getPhoneInfo() {
+            axios.get('https://flynn.boolean.careers/exercises/api/random/phone')
+                .then((response) => {
+                    this.phone = response.data.response;
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+            axios.get('https://flynn.boolean.careers/exercises/api/random/name')
+                .then((response) => {
+                    this.owner = response.data.response;
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+            axios.get('https://flynn.boolean.careers/exercises/api/random/boolean')
+                .then((response) => {
+                    this.expired = response.data.response;
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+        },
+    },
+    // ####### FINE TEST ##########
     mounted() {
         // promise serve per far visualizzare l'array alla fine del ciclo
         let promises = [];
