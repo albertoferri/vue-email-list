@@ -5,7 +5,8 @@ createApp({
         return {
             mails: [],
             phone: null,
-            brand: null
+            owner: null,
+            expired: null
         }
     },
     // ####### OPZIONALE TEST ##########
